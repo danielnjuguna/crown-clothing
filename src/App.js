@@ -1,43 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+
 import './App.css';
-import { CardList } from './components/card-list/card-list.component';
-import { SearchBox } from './components/search-box/search-box.component';
-class App extends Component {
-  constructor(){
-    super();
 
-    this.state={
-      monsters: [],
-      searchField: ''
-    };
-  }
-  componentDidMount(){
-    fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response =>response.json())
-    .then(users => this.setState({monsters: users}));
-  }
+import HomePage from './pages/homepage/homepage.component';
 
-  handleChange = e => {
-      this.setState({searchField: e.target.value})
-  }
+const HatsPage = () => (
+  <div>
+    <h1>HATS PAGE </h1>
+  </div>
+);
 
-  render(){
-    const { monsters, searchField} = this.state;
-    const filteredMonsters = monsters.filter(monster =>
-      monster.name.toLowerCase().includes(searchField.toLowerCase())
-      )
+function App() {
   return (
-    <div className="App">
-      <h1>Monsters Rolodex</h1>
-      <SearchBox
-      placeholder='search monster'
-      handleChange={this.handleChange}
-
-      />
-      <CardList monsters={filteredMonsters}></CardList>
+    <div>
+      <Switch>
+        <Route exact path='/' component={HomePage} />
+        <Route path='/hats' component={HatsPage} />
+      </Switch>
     </div>
   );
-}
 }
 
 export default App;
