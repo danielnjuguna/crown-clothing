@@ -2,7 +2,7 @@
   "name": "myapp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://danielnjuguna.github.io/monsters-Rolodex",
+  "homepage": "https://danielnjuguna.github.io/crown-clothing",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
