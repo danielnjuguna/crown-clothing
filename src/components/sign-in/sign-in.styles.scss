@@ -7,9 +7,8 @@
         margin: 10px 0;
     }
     .button{
-        display:inline-flex;
-
-        gap: 10px;
+        display:flex;
+        justify-content: space-between;
 
     }
 }
